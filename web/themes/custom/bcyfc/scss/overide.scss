@@ -1,0 +1,284 @@
+
+/* =========================================================================
+   Cards
+   ========================================================================= */
+/* =========================================================================
+   Basic Card
+   ========================================================================= */
+   .card {
+    padding: 12px;
+    background-color: get-color("background", "light-neutral");
+    max-width: 30em;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 0%;
+  }
+  @media only screen and (min-width: 760px) {
+    .card {
+      padding: 1em;
+    }
+  }
+  .card .card__title,
+  .card .card__body {
+    font-size: 18px;
+  }
+  .card .card__footer {
+    margin-top: auto;
+  }
+  
+  /* =========================================================================
+     Media Object Card
+     ========================================================================= */
+  /**
+   * Media object card
+   * https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
+   * @see components/cards/media-object-card.njk
+   */
+  .media-card {
+    padding: 12px 12px 16px;
+    box-shadow: 0 0 1px 1px get-color("border", "base");
+    border-top: 4px solid get-color("brand", "primary");
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 0%;
+  }
+  .media-card .media-card__media {
+    flex: 0 0 80px;
+    margin-right: 1em;
+  }
+  .media-card .media-card__media img {
+    border: 1px solid get-color("border", "base");
+  }
+  .media-card .media-card__body {
+    margin-top: -2px;
+  }
+  .media-card .media-card__title {
+    margin-bottom: 3px;
+  }
+  .media-card .media-card__subtitle,
+  .media-card .media-card__trail-text {
+    font-size: 16px;
+  }
+  .media-card .media-card__subtitle {
+    color: get-color("text", "note");
+    margin-bottom: 0.5em;
+  }
+  
+  /* =========================================================================
+     Promo Card
+     ========================================================================= */
+  .promo-card {
+    background-color: get-color("background", "light-neutral");
+    max-width: 40em;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 0%;
+    /**
+     * Featured variant
+     */
+    /**
+     * Inline variant
+     */
+  }
+  @media only screen and (min-width: 760px) {
+    .promo-card {
+      min-height: 10em;
+    }
+  }
+  .promo-card .promo-card__media {
+    position: relative;
+    flex: none;
+  }
+  .promo-card .promo-card__kicker {
+    font-size: 14px;
+  }
+  .promo-card .promo-card__media .promo-card__kicker {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+  }
+  .promo-card .promo-card__body {
+    padding: 12px 12px 16px;
+  }
+  .promo-card .promo-card__meta {
+    padding: 0 12px 16px;
+    margin-top: auto;
+  }
+  .promo-card .promo-card__subtitle,
+  .promo-card .promo-card__summary,
+  .promo-card .promo-card__meta {
+    font-size: 16px;
+  }
+  .promo-card .promo-card__title {
+    margin-bottom: 0.5em;
+  }
+  .promo-card .promo-card__title a {
+    color: get-color("brand", "primary");
+  }
+  .promo-card .promo-card__subtitle {
+    color: get-color("text", "note");
+    margin-bottom: 0.5em;
+  }
+  .promo-card.promo-card--featured {
+    background-color: white;
+    box-shadow: 0 0 1px 1px get-color("border", "base");
+  }
+  @media only screen and (min-width: 620px) {
+    .promo-card.promo-card--inline {
+      flex-direction: row;
+      max-width: 100%;
+      min-height: auto;
+    }
+    .promo-card.promo-card--inline .promo-card__media {
+      flex: 0 0 35%;
+    }
+  }
+  @media only screen and (min-width: 760px) {
+    .promo-card.promo-card--inline .promo-card__body {
+      padding: 20px;
+    }
+  }
+  
+  /* =========================================================================
+     Action Card
+     ========================================================================= */
+  .action-card {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 0%;
+    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 12px;
+  }
+  @media only screen and (min-width: 760px) {
+    .action-card {
+      padding: 20px 40px 20px 20px;
+    }
+  }
+  .action-card .action-card__footer {
+    margin-top: auto;
+  }
+  
+  .page-title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 1em;
+  }
+  
+  footer {
+    padding: 2em 0;
+    background: #343a40;
+    border-top: solid 5px #e83e8c;
+  }
+  
+  html {
+    background: #333940;
+  }
+  
+  .bg-dark {
+    border-bottom: solid 5px #e83e8c;
+  }
+  
+  .nudge-up, .nudge-up-large {
+    position: relative;
+    z-index: 10;
+    top: -60px;
+    margin-bottom: -60px;
+  }
+  
+  .hero .hero__image {
+    position: relative;
+  }
+  
+  .hero .hero__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .o-button-group-flex {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -10px 0 20px -10px;
+    justify-content: center;
+  }
+  
+  .btn.btn--outline {
+    background-color: transparent !important;
+    color: #db0079 !important;
+    border: 3px solid #db0079;
+  }
+  
+  .o-button-group-flex .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .o-button-group-flex .btn {
+    width: auto;
+    flex: 1 1 0;
+    margin: 10px 0 0 10px;
+    max-width: 35em;
+    white-space: nowrap;
+  }
+  
+  .content-box {
+    background-color: #fff;
+    border: 1px solid rgba(202, 202, 202, 0.5);
+    border-top: 4px solid #e5007d;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+  }
+  
+  .flex-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media only screen and (min-width: 620px) {
+    .flex-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -20px;
+    }
+  
+    .flex-grid > li > * {
+      height: 100%;
+      margin-left: 20px;
+    }
+  }
+  .flex-grid li {
+    max-width: 100%;
+    margin-bottom: 20px;
+    list-style: none !important;
+    margin-left: 0 !important;
+  }
+  
+  @media only screen and (min-width: 620px) {
+    .flex-grid.flex-grid--3up li {
+      flex: 0 0 33.3%;
+    }
+  }
+  .promo-card {
+    background-color: #f6f7f9;
+    height: 100%;
+  }
+  
+  .block--footer ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .block--footer li {
+    color: white;
+  }
+  
+  .footer-__field-copyright- {
+    color: white;
+    font-size: 0.8em;
+    margin: 2em 0;
+  }
