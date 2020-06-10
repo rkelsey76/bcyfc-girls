@@ -1,0 +1,132 @@
+html {
+    background: #333940;
+}
+
+.bg-dark {
+    border-bottom: solid 5px $pink;
+}
+
+//buttons
+
+.nudge-up, .nudge-up-large {
+    position: relative;
+    z-index: 10;
+    top: -60px;
+    margin-bottom: -60px;
+}
+
+.hero .hero__image {
+    position: relative;
+}
+
+.hero .hero__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.o-button-group-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: -10px 0 20px -10px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.btn.btn--outline {
+    background-color: transparent!important;
+    color: #db0079!important;
+    border: 3px solid #db0079;
+}
+
+
+.o-button-group-flex .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.o-button-group-flex .btn {
+    width: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+    margin: 10px 0 0 10px;
+    max-width: 35em;
+    white-space: nowrap;
+}
+
+
+.content-box {
+    background-color: #fff;
+    border: 1px solid hsla(0,0%,79.2%,.5);
+    border-top: 4px solid #e5007d;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+}
+
+
+// flex grid 
+
+.flex-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 620px){
+    .flex-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-left: -20px;
+    }
+
+    .flex-grid>li>* {
+        height: 100%;
+        margin-left: 20px;
+    }
+}
+
+.flex-grid li{
+        max-width: 100%;
+        margin-bottom: 20px;
+        list-style: none!important;
+        margin-left: 0!important;
+}
+
+@media only screen and (min-width: 620px){
+.flex-grid.flex-grid--3up li {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3%;
+    flex: 0 0 33.3%;
+}
+}
+
+.promo-card {
+    background-color: #f6f7f9;
+    height: 100%;   
+}
+
+// footer 
+
+.block--footer ul {margin: 0;list-style: none;padding: 0;}
+
+.block--footer li {
+    color:white;
+    }
+
+.footer-__field-copyright- {
+    color: white;
+    font-size: .8em;
+    margin: 2em 0;
+}

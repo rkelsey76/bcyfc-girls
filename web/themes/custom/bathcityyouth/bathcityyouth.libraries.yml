@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/bathcityyouth.style.css: {}
+  js:
+    assets/js/bathcityyouth.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,101 @@
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive-ratio($x, $y) {
+    $padding: ($y / $x) * 100;
+    padding-bottom: unquote(decimal-round($padding, 1, ceil) + '%');
+}
+
+// via http://simplyaccessible.com/article/three-pitfalls-text-alternatives/
+@mixin visually-hidden() {
+    @media screen {
+        color: #000000;
+        background-color: #ffffff;
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        position: absolute;
+    }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin reset-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin on-interact {
+    &:active,
+    &:focus,
+    &:hover {
+        @content;
+    }
+}
+
+@mixin disabledBtn() {
+    background-color: grey !important;
+    @include on-interact {
+        background-color: grey !important;
+    }
+}
+
+@mixin text-caption() {
+    color: get-color('text', 'note');
+    font-size: 14px;
+    margin: 0.5em 0;
+}
+
+@mixin underlined() {
+    content: '';
+    display: block;
+    width: 80px;
+    padding-top: 10px;
+    border-bottom: 3px solid get-color('brand', 'primary');
+}
+
+@mixin fullwidth() {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+// https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin wrap-words() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    hyphens: auto;
+}
